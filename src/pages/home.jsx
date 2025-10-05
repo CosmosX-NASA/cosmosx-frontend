@@ -1,48 +1,21 @@
-<<<<<<< HEAD
-import React, { useEffect } from 'react';
-import { Search } from 'lucide-react';
-import FeatureCard from '../components/HomeCard';
-import { useNavigate } from 'react-router-dom';
-
-export default function Home() {
-  const navigate = useNavigate();
-  const cards = [
-    {
-      id: 1,
-      image: '/main01.png',
-      title: 'Discover and summarize papers related to your topic',
-    },
-    {
-      id: 2,
-      image: '/main02.png',
-      title: 'Identify research gaps from the selected papers',
-    },
-    {
-      id: 3,
-      image: '/main03.png',
-      title: 'Review the hypotheses',
-    },
-  ];
-=======
 import React, { useEffect } from "react";
 import { Search } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 export default function Home() {
   const navigate = useNavigate();
->>>>>>> 67942ce ([design] 홈 레이아웃 수정)
 
   useEffect(() => {
-    localStorage.removeItem('selectedPapers');
-    localStorage.removeItem('hasSeenIntro');
-    localStorage.removeItem('cosmosx_generateCount');
-    localStorage.removeItem('cosmosx_userId');
+    localStorage.removeItem("selectedPapers");
+    localStorage.removeItem("hasSeenIntro");
+    localStorage.removeItem("cosmosx_generateCount");
+    localStorage.removeItem("cosmosx_userId");
   }, []);
 
   const search = (e) => {
     e.preventDefault();
     const searchTerm = e.target.elements[0].value;
-    console.log('Searching for:', searchTerm);
+    console.log("Searching for:", searchTerm);
     navigate(`/paper?query=${encodeURIComponent(searchTerm)}`);
   };
 
